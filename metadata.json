@@ -1,0 +1,12 @@
+{
+  "name": "Prayer Times",
+  "description": "Displays Islamic prayer times in the top panel with multi-language support",
+  "uuid": "burawi.ba.salat@gmail.com",
+  "shell-version": ["45", "46"],
+  "url": "https://github.com/burawi/gnome-shell-extension-prayer-times",
+  "version": 8,
+  "version-name": "8.0.4",
+  "session-modes": ["user", "unlock-dialog"],
+  "gettext-domain": "burawi-ba-salat",
+  "settings-schema": "org.gnome.shell.extensions.burawi-ba-salat"
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.burawi-ba-salat" path="/org/gnome/shell/extensions/burawi-ba-salat/">
+    <key name="latitude" type="d">
+      <default>40.6998</default>
+      <summary>Latitude</summary>
+      <description>The latitude of your location for prayer time calculations.</description>
+    </key>
+    <key name="longitude" type="d">
+      <default>29.9831</default>
+      <summary>Longitude</summary>
+      <description>The longitude of your location for prayer time calculations.</description>
+    </key>
+    <key name="calculation-method" type="s">
+      <default>'DIYANET'</default>
+      <summary>Calculation Method</summary>
+      <description>The method used for calculating prayer times.</description>
+    </key>
+    <key name="language" type="s">
+      <default>'en'</default>
+      <summary>Language</summary>
+      <description>The language used for displaying prayer times and messages.</description>
+    </key>
+  </schema>
+</schemalist>

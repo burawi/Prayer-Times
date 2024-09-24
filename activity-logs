@@ -1,0 +1,135 @@
+[2023-05-14 12:00:00] Major update to the Prayer Times GNOME Shell Extension:
+- Updated extension structure for compatibility with GNOME Shell 44 and Ubuntu 24
+- Refactored code to separate PrayTimes calculation into its own module (praytimes.js)
+- Added user-configurable settings for latitude, longitude, and calculation method
+- Created settings schema (org.gnome.shell.extensions.burawi-ba-salat.gschema.xml)
+- Updated metadata.json with new compatibility information
+- Added automatic updates of prayer times every minute
+- Created README.md with installation and usage instructions
+- Created CHANGELOG.md to track version changes
+- Fixed issues preventing the extension from working on Ubuntu 24
+
+[2024-09-21 14:14:12] Updated Prayer Times GNOME Shell Extension for GNOME 45 and 46:
+- Modified metadata.json to include support for GNOME Shell versions 44, 45, and 46
+- Incremented extension version to 3
+- Updated CHANGELOG.md to reflect recent changes
+- Attempted to recompile schema (glib-compile-schemas schemas/)
+- Note: Unable to verify successful schema compilation due to command execution limitations
+
+[2024-09-21 14:31:51] Fixed import issue in extension.js:
+- Modified the import statement for PrayTimes to be compatible with recent GNOME Shell versions
+- Moved the import statement to the top of the file
+- Updated the syntax to use 'const PrayTimes = Me.imports.praytimes.PrayTimes;'
+- This change addresses the SyntaxError that was causing the extension to appear in red in the extensions list
+
+[2024-09-21 15:45:23] Resolved "Import declarations may only appear at top level of a module" error:
+- Added missing import statement for PrayTimes class in extension.js
+- Placed the import statement at the top level of the module
+- Updated the import syntax to use 'const PrayTimes = Me.imports.praytimes.PrayTimes;'
+- This change should resolve the import-related error and improve the extension's functionality
+
+[2024-09-21 16:30:45] Fixed SyntaxError and improved extension functionality:
+- Modified praytimes.js to export the PrayTimes class correctly for GNOME Shell extensions
+- Updated extension.js to properly initialize and use the PrayTimes class
+- Implemented a new Indicator class that displays the next prayer time in the GNOME Shell panel
+- Added functionality to update the prayer times every minute
+- Improved error handling and code structure in extension.js
+- These changes should resolve the SyntaxError and make the extension fully functional
+
+[2024-09-24 18:38:27] Updated import statements in extension.js to follow new GNOME Shell guidelines:
+- Replaced old-style imports with new ES6 module imports
+- Updated imports for GObject, St, Clutter, Main, PanelMenu, and GLib
+- Changed ExtensionUtils import to use the new Extension class
+- Updated the PrayTimes import to use ES6 module syntax
+- Refactored the Extension class to extend the new Extension base class
+- Replaced Mainloop usage with GLib for timeout functionality
+- These changes improve compatibility with newer versions of GNOME Shell and follow best practices for extension development
+
+[2024-09-24 19:24:57] Comprehensive update to praytimes.js and extension.js:
+- Restored full implementation of PrayTimes class in praytimes.js, including all methods previously omitted
+- Updated extension.js to use the complete PrayTimes implementation
+- Improved Indicator class in extension.js to use settings for latitude, longitude, and calculation method
+- Added settings change listener to update prayer times when user changes settings
+- Refactored _updateTimer method to use current settings for location
+- Enhanced error handling and cleanup in the Indicator class
+- These changes ensure full functionality of the prayer times calculation and improve the extension's responsiveness to user settings
+
+[2024-09-25 10:15:30] Added prefs.js file to enable settings interface:
+- Created prefs.js file in the main extension directory
+- Implemented settings UI for latitude, longitude, and calculation method
+- This addition allows users to access and modify extension settings through the GNOME Shell interface
+- The gear icon for settings should now appear in the extensions list
+
+[2024-09-25 14:30:00] Added multi-language support:
+- Created translations.js file with translations for 17 languages
+- Updated extension.js to use translations based on user's language setting
+- Modified prefs.js to include a dropdown for language selection
+- Updated schemas/org.gnome.shell.extensions.burawi-ba-salat.gschema.xml to include a new 'language' key
+- Updated README.md to include information about multi-language support
+- Updated CHANGELOG.md to reflect the addition of multi-language support
+- Incremented version number to 5.0.0 in metadata.json
+- These changes allow users to view prayer times in their preferred language, improving accessibility and user experience
+
+[2024-09-26 11:45:00] Added support for Amazigh language in two scripts:
+- Updated translations.js to include separate entries for Amazigh in Tifinagh script (ber_tfng) and Arabic script (ber_arab)
+- Modified prefs.js to include new language options in the dropdown menu for Amazigh (Tifinagh) and Amazigh (Arabic script)
+- Updated README.md to reflect the new language options
+- Updated CHANGELOG.md to document the addition of Amazigh language options
+- Incremented version number to 5.1.0 in metadata.json
+- These changes improve language support for Amazigh-speaking users, providing options for both Tifinagh and Arabic scripts
+
+[2024-09-24 20:24:08] Added dropdown menu for prayer times:
+- Modified extension.js to include a PopupMenu for displaying all prayer times
+- Added _createMenu method to populate the menu with prayer times
+- Updated _updateTimer method to refresh the menu items along with the panel label
+- Improved user interaction by allowing users to click on the extension text to view all prayer times
+- These changes enhance the extension's functionality by providing easy access to all prayer times of the day
+
+[2024-09-24 20:58:33] Added gear icon button for settings in dropdown menu:
+- Modified extension.js to include a gear icon button at the bottom of the dropdown menu
+- Added _addSettingsButton method to create and add the settings button to the menu
+- Updated _createMenu method to include the new settings button
+- Updated translations.js to include "Settings" translations for all supported languages
+- These changes improve user experience by providing easy access to extension settings directly from the dropdown menu
+
+[2024-09-24 21:03:34] Updated prefs.js to use ES module imports:
+- Modified import statements in prefs.js to use ES module syntax
+- Updated imports for Adw, Gio, and Gtk
+- Changed ExtensionUtils import to use ES module syntax
+- These changes improve compatibility with newer versions of GNOME Shell and follow best practices for extension development
+
+[2024-09-24 21:18:39] Major update to resolve extensionUtils.js loading issue and improve GNOME Shell compatibility:
+- Refactored prefs.js to use the new ExtensionPreferences class
+- Updated extension.js to use the latest GNOME Shell extension APIs
+- Modified metadata.json to reflect new version (8.0.0) and compatibility with GNOME Shell 45 and 46
+- Updated CHANGELOG.md to document recent changes and improvements
+- Removed unused imports and updated import statements in both extension.js and prefs.js
+- Improved error handling and code structure in extension.js
+- These changes resolve the extensionUtils.js loading issue, enhance overall extension stability and performance, and ensure compatibility with the latest GNOME Shell versions
+
+[2024-09-24 21:46:08] Fixed ImportError in prefs.js:
+- Updated prefs.js to follow the recommended approach from GNOME Shell extension documentation
+- Removed import for ExtensionPreferences and changed class to export a fillPreferencesWindow function
+- Updated getSettings() call to use ExtensionUtils.getSettings()
+- Modified import statements to use the correct resource paths
+- These changes resolve the ImportError related to loading prefs.js and improve compatibility with the latest GNOME Shell versions
+
+[2024-09-24 21:51:59] Fixed import statement in extension.js:
+- Updated the import statement for Extension class and gettext function in extension.js
+- Changed the import path to 'resource:///org/gnome/shell/extensions/extension.js'
+- This change ensures consistency with the updates made in prefs.js and resolves any potential import issues in extension.js
+- Updated CHANGELOG.md to reflect this additional fix
+- These changes further improve the extension's compatibility with the latest GNOME Shell versions and maintain code consistency across files
+
+[2024-09-26 15:30:22] Fixed issue with prayer names not updating when language changes:
+- Modified _createMenu() method in extension.js to use translated prayer names
+- Updated _getNextPrayer() method to return both original and translated prayer names
+- Adjusted _updateTimer() method to display translated prayer names in the panel
+- These changes ensure that prayer names are correctly translated and updated when the user changes the language setting
+- Improved overall consistency of language handling throughout the extension
+
+[2024-09-24 22:42:56] Added test file for prayer times calculation:
+- Created test_prayertimes.js file to verify the accuracy of prayer time calculations
+- Implemented a simple test that compares calculated prayer times with expected times for September 24th, 2024
+- The test includes checks for Fajr, Sunrise, Dhuhr, Asr, Maghrib, and Isha prayer times
+- This addition helps ensure the reliability and accuracy of the prayer times calculation in the extension

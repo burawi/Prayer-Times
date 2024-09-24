@@ -1,0 +1,8 @@
+burawi.ba.salat@gmail.com
+  Name: Prayer Times
+  Description: Displays Islamic prayer times in the top panel
+  Path: /home/burawi/.local/share/gnome-shell/extensions/burawi.ba.salat@gmail.com
+  URL: https://github.com/yourusername/gnome-shell-extension-prayer-times
+  Version: 2
+  Enabled: Yes
+  State: OUT OF DATE
